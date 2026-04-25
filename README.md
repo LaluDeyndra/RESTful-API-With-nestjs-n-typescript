@@ -1,4 +1,4 @@
-# Simple REST API - NestJS + TypeScript
+# Simple REST API | NestJS + TypeScript
 
 API ini dibuat untuk memenuhi requirement simple REST API dengan:
 
@@ -17,7 +17,7 @@ Alasan memilih pattern ini:
 - mudah di-test karena dependency injection.
 - banyak forum yang pakai pattern ini (berdasarkan data yang saya cari jadi kemungkinan bisa tidak bisa iya).
 
-## Struktur fitur utama
+## Fitur utama
 
 - `AuthModule`: login dan generate JWT.
 - `UsersModule`: CRUD user.
@@ -50,14 +50,14 @@ JWT_EXPIRES_IN=1h
 PORT=3000
 ```
 
-## Menjalankan project
+## Running project
 
 ```bash
 npm install
 npm run start:dev
 ```
 
-## Menjalankan test
+## Running test
 
 ```bash
 # unit test
@@ -67,7 +67,7 @@ npm run test
 npm run test:e2e
 ```
 
-## Endpoint ringkas
+## Endpoint
 
 - `POST /users` - create user
 - `GET /users` - list user (JWT)
@@ -81,7 +81,7 @@ npm run test:e2e
 - `PUT /tasks/:id` - update task user login (JWT)
 - `DELETE /tasks/:id` - delete task user login (JWT)
 
-## Dokumentasi API (Postman)
+## Dokumentasi API (saya lebih suka Postman)
 
 Import file koleksi:
 
@@ -90,3 +90,5 @@ Import file koleksi:
 Setelah login, simpan `access_token` ke variable `token`, lalu gunakan header:
 
 - `Authorization: Bearer {{token}}`
+
+- Note: beberapa sumber saya dapatkan dari forum dev
