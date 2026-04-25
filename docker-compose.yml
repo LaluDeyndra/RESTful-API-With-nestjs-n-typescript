@@ -1,0 +1,34 @@
+version: '3.9'
+
+services:
+  nestapp:
+    container_name: nestapp
+    image: laludeyndra/nestapi:1.0
+    build: .
+    ports:
+      - '3000:3000'
+    environment:
+      # Sesuaikan dengan nama variabel di app.module.ts sebelumnya
+      - DB_TYPE=mysql
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_USER=root
+      - DB_PASSWORD=restful-api
+      - DB_NAME=db_nestjs # Nama database yang ingin dibuat
+    depends_on:
+      - db
+
+  db:
+    container_name: db
+    image: mysql:8 # Menggunakan image resmi MySQL versi 8
+    environment:
+      # Environment variables khusus bawaan image MySQL
+      MYSQL_ROOT_PASSWORD: restful-api # Harus SAMA dengan DB_PASSWORD di nestapp
+      MYSQL_DATABASE: db_nestjs # Harus SAMA dengan DB_NAME di nestapp
+    ports:
+      - '3306:3306' # Mapping port 3306 (default MySQL)
+    volumes:
+      - mysqldata:/var/lib/mysql # Path penyimpanan data MySQL
+
+volumes:
+  mysqldata: {}
