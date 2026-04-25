@@ -52,7 +52,7 @@ JWT_EXPIRES_IN=1h
 PORT=3000
 ```
 
-## Menjalankan project
+## Running project
 
 ### Opsi 1 - pakai Docker (direkomendasikan)
 
@@ -69,7 +69,7 @@ npm install
 npm run start:dev
 ```
 
-## Menjalankan test
+## Running test
 
 ```bash
 # unit test
@@ -81,7 +81,7 @@ npm run test:e2e
 
 Catatan: e2e test diset menggunakan SQLite in-memory khusus test agar stabil dan tidak tergantung MySQL lokal. Runtime aplikasi tetap MySQL sesuai requirement.
 
-## Alur pakai API (singkat)
+## Alur pakai API (singkat, padat, jelas)
 
 1. `POST /users` untuk membuat user
 2. `POST /auth/login` untuk ambil JWT token
@@ -121,9 +121,3 @@ Setelah login, simpan `access_token` ke variable `token`, lalu pakai header:
 - `Authorization: Bearer {{token}}`
 
 ---
-
-Kalau mau dipoles lebih lanjut, next step yang bagus biasanya:
-
-- hashing password pakai bcrypt saat create user
-- unique constraint untuk email
-- pagination untuk list endpoint
