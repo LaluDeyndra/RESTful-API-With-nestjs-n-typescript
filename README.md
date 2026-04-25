@@ -9,14 +9,13 @@ API ini dibuat untuk memenuhi requirement simple REST API dengan:
 
 ## Pattern yang digunakan
 
-Project ini memakai **Modular + Layered Pattern (Controller-Service-Entity)** yang umum dipakai di NestJS.
+Project ini memakai **Modular + Layered Pattern (Controller-Service-Entity)** yang umumnya emang sering dipakai di NestJS.
 
 Alasan memilih pattern ini:
 
-- **Separation of concerns**: controller fokus HTTP, service fokus business logic.
-- **Scalable**: setiap domain dipisah dalam module (`auth`, `users`, `tasks`).
-- **Testable**: mudah di-test karena dependency injection.
-- **Maintainable**: perubahan fitur lebih terlokalisasi.
+- setiap domain dipisah dalam module (`auth`, `users`, `tasks`).
+- mudah di-test karena dependency injection.
+- banyak forum yang pakai pattern ini (berdasarkan data yang saya cari jadi kemungkinan bisa tidak bisa iya).
 
 ## Struktur fitur utama
 
